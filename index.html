@@ -467,6 +467,8 @@ section{padding:120px 56px;}
   margin-bottom:16px;
 }
 .sec-desc{font-size:16px;color:var(--ink-soft);max-width:600px;line-height:1.8;margin-bottom:60px;}
+.sec-desc a{color:var(--gold-dark);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--border-strong);transition:border-color var(--t-fast) var(--ease),color var(--t-fast) var(--ease);}
+.sec-desc a:hover{color:var(--gold);border-color:var(--gold);}
 
 /* Reveal animations */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);will-change:opacity,transform;}
@@ -753,6 +755,32 @@ section{padding:120px 56px;}
 .exp-bullets li strong{color:var(--royal-mid);font-weight:600;}
 
 /* ═══════════════════════════════════════════════
+   NEEDLEPUSHER PROJECT
+═══════════════════════════════════════════════ */
+#needlepusher{background:transparent;}
+.np-card{
+  background:var(--surface-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-xl);
+  padding:44px 48px;
+  backdrop-filter:blur(20px);
+  box-shadow:var(--shadow-sm);
+  position:relative;overflow:hidden;
+}
+.np-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold-dark),var(--gold-light),var(--royal-light));
+}
+.np-link{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-bottom:28px;padding:10px 20px;
+  background:var(--gold-soft);border:1px solid var(--border-mid);
+  border-radius:999px;font-size:13px;font-weight:700;color:var(--gold-dark);
+  text-decoration:none;transition:transform var(--t-fast) var(--ease),box-shadow var(--t-fast) var(--ease);
+}
+.np-link:hover{transform:translateY(-2px);box-shadow:var(--shadow-gold);}
+
+/* ═══════════════════════════════════════════════
    SKILLS
 ═══════════════════════════════════════════════ */
 #skills{background:transparent;}
@@ -871,6 +899,27 @@ section{padding:120px 56px;}
 }
 .cert-info h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;}
 .cert-info p{font-size:12px;color:var(--ink-ghost);}
+
+/* ═══════════════════════════════════════════════
+   EDUCATION
+═══════════════════════════════════════════════ */
+#education{background:transparent;}
+.edu-card{
+  display:flex;align-items:center;gap:28px;
+  padding:36px 40px;
+  background:var(--surface-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-xl);
+  backdrop-filter:blur(20px);
+  box-shadow:var(--shadow-sm);
+}
+.edu-icon{
+  width:64px;height:64px;border-radius:var(--radius-md);flex-shrink:0;
+  background:linear-gradient(135deg,rgba(201,168,76,.14),rgba(27,58,107,.10));
+  display:flex;align-items:center;justify-content:center;font-size:30px;
+}
+.edu-info h4{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.edu-info p{font-size:14px;color:var(--ink-soft);}
 
 /* ═══════════════════════════════════════════════
    CONTACT
@@ -1037,6 +1086,7 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
   .skills-grid{grid-template-columns:1fr;}
   footer{padding:20px 24px;}
   #contact{padding:80px 24px;}
+  .edu-card{flex-direction:column;text-align:center;}
 }
 @media(max-width:640px){
   .certs-grid{grid-template-columns:1fr 1fr;}
@@ -1068,6 +1118,7 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
   .glass-icon{width:52px;height:52px;}
   .skill-card{padding:24px 20px;}
   .hero-stats{padding:20px 20px;}
+  .np-card{padding:28px 20px;}
 }
 @media(max-width:400px){
   .certs-grid{grid-template-columns:1fr;}
@@ -1099,6 +1150,7 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
     <li><a href="#about">About</a></li>
     <li><a href="#impact">Impact</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#needlepusher">Project</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#certifications">Certs</a></li>
   </ul>
@@ -1113,6 +1165,7 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
     <li><a href="#about">About</a></li>
     <li><a href="#impact">Impact</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#needlepusher">Project</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#certifications">Certs</a></li>
   </ul>
@@ -1207,7 +1260,7 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
   </div>
 
   <div class="hero-inner">
-    <div class="hero-badge"><span class="badge-dot"></span>Digital Marketing Manager · Bengaluru, India</div>
+    <div class="hero-badge"><span class="badge-dot"></span>Digital Marketing Manager · Growth & Web Systems · Bengaluru, India</div>
     <h1 class="hero-title">Hi, I'm<br><em>Adarsha S.</em></h1>
     <p class="hero-sub">
       I turn ad spend into measurable growth. Performance marketer with <strong>expertise in performance marketing, social media growth &amp; branding</strong> across
@@ -1219,15 +1272,15 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
       <a href="https://wa.me/919113243402?text=Hi%20Adarsha%2C%20I%20saw%20your%20portfolio!" target="_blank" rel="noopener" class="btn-secondary"><span>Get in Touch 💬</span></a>
     </div>
     <div class="hero-stats">
-      <div class="stat-item"><strong class="count-up" data-target="2.8" data-suffix="M+">0</strong><span>Total Views</span></div>
+      <div class="stat-item"><strong class="count-up" data-target="3.6" data-suffix="M+">0</strong><span>Total Views</span></div>
       <div class="stat-div"></div>
-      <div class="stat-item"><strong class="count-up" data-target="1.7" data-suffix="M+">0</strong><span>Total Reach</span></div>
+      <div class="stat-item"><strong class="count-up" data-target="2.2" data-suffix="M+">0</strong><span>Total Reach</span></div>
       <div class="stat-div"></div>
       <div class="stat-item"><strong class="count-up" data-target="11" data-suffix="">0</strong><span>B2B Leads</span></div>
       <div class="stat-div"></div>
       <div class="stat-item"><strong>₹70L+</strong><span>Min. Budget / Lead</span></div>
       <div class="stat-div"></div>
-      <div class="stat-item"><strong class="count-up" data-target="1089" data-suffix="%">0</strong><span>LinkedIn Impression Growth</span></div>
+      <div class="stat-item"><strong>100% Organic</strong><span>LinkedIn Growth</span></div>
     </div>
   </div>
 </section>
@@ -1236,17 +1289,19 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
 <div class="brand-ticker" aria-label="Clients and employers">
   <div class="ticker-track">
     <span>Jade Cucine</span><span class="tick-dot">·</span>
-    <span>MBH Creative Studio</span><span class="tick-dot">·</span>
+    <span>My Beautiful Home</span><span class="tick-dot">·</span>
     <span>Modular Story</span><span class="tick-dot">·</span>
     <span>Globiva</span><span class="tick-dot">·</span>
     <span>AK Pets</span><span class="tick-dot">·</span>
     <span>Harman / AT&T</span><span class="tick-dot">·</span>
+    <span>Needlepusher</span><span class="tick-dot">·</span>
     <span>Jade Cucine</span><span class="tick-dot">·</span>
-    <span>MBH Creative Studio</span><span class="tick-dot">·</span>
+    <span>My Beautiful Home</span><span class="tick-dot">·</span>
     <span>Modular Story</span><span class="tick-dot">·</span>
     <span>Globiva</span><span class="tick-dot">·</span>
     <span>AK Pets</span><span class="tick-dot">·</span>
     <span>Harman / AT&T</span><span class="tick-dot">·</span>
+    <span>Needlepusher</span><span class="tick-dot">·</span>
   </div>
 </div>
 
@@ -1257,13 +1312,14 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
     <h2 class="sec-title reveal">About Me</h2>
     <div class="about-layout">
       <div class="about-prose reveal from-left">
-        <p>Results-driven Digital Marketing Manager with expertise in <strong>performance marketing, social media growth, branding, and AI-powered content production</strong>.</p>
-        <p>Proven track record delivering <strong>2.8M+ total views, 1.7M+ reach</strong>, <strong>generated 87,731 organic LinkedIn impressions and reached 51,309 professionals in 28 days with 1,089% growth vs prior period and measurable business impact across premium brands</strong>. Adept at combining data-led optimisation with creative strategy — managing campaigns, design execution, and digital presence end-to-end.</p>
+        <p>Results-driven Digital Marketing Manager with expertise in <strong>performance marketing, social media growth, branding, and AI-powered content production</strong>, complemented by hands-on experience designing and shipping production web applications.</p>
+        <p>Proven track record delivering <strong>3.6M+ total views, 2.2M+ reach</strong>, <strong>90,000+ LinkedIn impressions and 54,000+ professional reach — fully organic</strong> — through paid media, organic growth, and thought leadership. In addition to marketing execution, independently architected and launched a live e-commerce platform end-to-end, covering payment integration, database design, and production deployment.</p>
         <p>Currently at <strong>Jade Cucine, Bengaluru</strong>, driving 2.1M+ views and high-value conversions through targeted Meta Ads, LinkedIn organic growth, and creative-led campaigns.</p>
         <div class="about-pills">
           <span class="pill">Meta Ads</span><span class="pill">B2B Lead Gen</span><span class="pill">D2C Growth</span>
           <span class="pill">B2C Campaigns</span><span class="pill">A/B Testing</span><span class="pill">Python Automation</span>
           <span class="pill">Performance Marketing</span><span class="pill">SQL Analytics</span>
+          <span class="pill">Next.js / React</span>
         </div>
       </div>
       <div class="about-cards">
@@ -1272,8 +1328,8 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
           <div class="hl-content"><h4>Performance-First Mindset</h4><p>Every campaign built around measurable KPIs — ROAS, CPA, CAC — not vanity metrics.</p></div>
         </div>
         <div class="hl-card reveal" style="transition-delay:.16s">
-          <div class="hl-icon">🤖</div>
-          <div class="hl-content"><h4>Technical Edge</h4><p>Python automation reduced reporting effort by 60%; SQL optimisation sped data processing by 35%.</p></div>
+          <div class="hl-icon">🛒</div>
+          <div class="hl-content"><h4>Full-Stack Builder</h4><p>Solo-architected and launched a live e-commerce platform — Next.js, Razorpay, Supabase — from concept to real transactions.</p></div>
         </div>
         <div class="hl-card reveal" style="transition-delay:.24s">
           <div class="hl-icon">📈</div>
@@ -1303,9 +1359,9 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
       <div class="iviz-card reveal" style="transition-delay:.05s">
         <h5>Content Performance Breakdown</h5>
         <div class="iviz-bars">
-          <div class="iviz-row"><span class="iviz-label">Views</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width="1"></div></div><span class="iviz-val">2.8M+</span></div>
-          <div class="iviz-row"><span class="iviz-label">Reach</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width=".62"></div></div><span class="iviz-val">1.7M+</span></div>
-          <div class="iviz-row"><span class="iviz-label">Engagements</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width=".22"></div></div><span class="iviz-val">53K+</span></div>
+          <div class="iviz-row"><span class="iviz-label">Views</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width="1"></div></div><span class="iviz-val">3.6M+</span></div>
+          <div class="iviz-row"><span class="iviz-label">Reach</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width=".61"></div></div><span class="iviz-val">2.2M+</span></div>
+          <div class="iviz-row"><span class="iviz-label">Engagements</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width=".21"></div></div><span class="iviz-val">76K+</span></div>
           <div class="iviz-row"><span class="iviz-label">Non-Follower</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width=".988"></div></div><span class="iviz-val">98.8%</span></div>
         </div>
       </div>
@@ -1319,25 +1375,25 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
         </div>
       </div>
       <div class="iviz-card reveal" style="transition-delay:.15s">
-        <h5>Automation Impact</h5>
+        <h5>MBH Meta Ads (Dec–Feb)</h5>
         <div class="iviz-bars">
-          <div class="iviz-row"><span class="iviz-label">Reporting Time</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width=".60"></div></div><span class="iviz-val">−60%</span></div>
-          <div class="iviz-row"><span class="iviz-label">SQL Speed</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width=".35"></div></div><span class="iviz-val">+35%</span></div>
-          <div class="iviz-row"><span class="iviz-label">Reels Views Share</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width=".784"></div></div><span class="iviz-val">78.4%</span></div>
-          <div class="iviz-row"><span class="iviz-label">Profile Growth</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width=".90"></div></div><span class="iviz-val">400%+</span></div>
+          <div class="iviz-row"><span class="iviz-label">Total Views</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width="1"></div></div><span class="iviz-val">12.5L+</span></div>
+          <div class="iviz-row"><span class="iviz-label">Reach</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width=".61"></div></div><span class="iviz-val">7.7L+</span></div>
+          <div class="iviz-row"><span class="iviz-label">Engagements</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width=".05"></div></div><span class="iviz-val">66,746</span></div>
+          <div class="iviz-row"><span class="iviz-label">Views from Ads</span><div class="iviz-bar-wrap"><div class="iviz-bar" data-width=".995"></div></div><span class="iviz-val">99.5%</span></div>
         </div>
       </div>
     </div>
 
     <!-- Metric cards -->
     <div class="metrics-grid">
-      <div class="metric-card reveal scale-up" style="transition-delay:.04s"><strong class="count-up" data-target="2.8" data-suffix="M+">0</strong><span>Total Views</span></div>
-      <div class="metric-card reveal scale-up" style="transition-delay:.08s"><strong class="count-up" data-target="1.7" data-suffix="M+">0</strong><span>Total Reach</span></div>
-      <div class="metric-card reveal scale-up" style="transition-delay:.12s"><strong class="count-up" data-target="53" data-suffix="K+">0</strong><span>Total Engagements</span></div>
+      <div class="metric-card reveal scale-up" style="transition-delay:.04s"><strong class="count-up" data-target="3.6" data-suffix="M+">0</strong><span>Total Views</span></div>
+      <div class="metric-card reveal scale-up" style="transition-delay:.08s"><strong class="count-up" data-target="2.2" data-suffix="M+">0</strong><span>Total Reach</span></div>
+      <div class="metric-card reveal scale-up" style="transition-delay:.12s"><strong class="count-up" data-target="76" data-suffix="K+">0</strong><span>Total Engagements</span></div>
       <div class="metric-card reveal scale-up" style="transition-delay:.16s"><strong class="count-up" data-target="98" data-suffix="%+">0</strong><span>Views from Non-Followers</span></div>
       <div class="metric-card reveal scale-up" style="transition-delay:.20s"><strong class="count-up" data-target="11">0</strong><span>High-Intent B2B Leads</span></div>
       <div class="metric-card reveal scale-up" style="transition-delay:.24s"><strong class="count-up" data-target="70" data-suffix="L+">0</strong><span>Min. Budget per Lead</span></div>
-      <div class="metric-card reveal scale-up" style="transition-delay:.28s"><strong class="count-up" data-target="87" data-suffix="K+">0</strong><span>LinkedIn Organic Impressions</span></div>
+      <div class="metric-card reveal scale-up" style="transition-delay:.28s"><strong class="count-up" data-target="90" data-suffix="K+">0</strong><span>LinkedIn Organic Impressions</span></div>
       <div class="metric-card reveal scale-up" style="transition-delay:.32s"><strong class="count-up" data-target="400" data-suffix="%+">0</strong><span>Profile Activity Growth</span></div>
     </div>
 
@@ -1348,6 +1404,7 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
       <div class="chk">12,703 profile activity events tracked</div>
       <div class="chk">5 B2B partnerships closed</div>
       <div class="chk">60% reduction in reporting effort via Python</div>
+      <div class="chk">Solo-built &amp; launched a live e-commerce platform</div>
     </div>
   </div>
 </section>
@@ -1373,10 +1430,13 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
           <ul class="exp-bullets">
             <li>Drove <strong>2,110,497 total views</strong> and <strong>1,257,738 accounts reached</strong> (Feb 2026 – Mar 15, 2026)</li>
             <li>Achieved <strong>98.8% views from non-followers</strong> — strong discovery &amp; reach via Reels</li>
+            <li>Generated <strong>9,125 content interactions</strong> and <strong>12,703 profile activity events</strong></li>
             <li>Reels drove <strong>78.4% of all views</strong> and 92.2% of all interactions — primary growth driver</li>
-            <li>Generated <strong>87,731 organic LinkedIn impressions</strong>, reached 51,309 professionals in 28 days — 1,089% growth vs prior period</li>
+            <li>Generated <strong>90,000+ organic LinkedIn impressions</strong> and reached 54,000+ professionals, fully organic</li>
+            <li>Managed child account from scratch: <strong>4,600+ views, 271 interactions, 21 followers</strong> in ~33 days</li>
             <li>Designed client company logo from scratch — approved and officially adopted by the client</li>
             <li>Built Jade Cucine's company portfolio from scratch — structured for client-facing sales and lead conversion</li>
+            <li>Managed Instagram growth strategy, community management, content planning, and analytics reporting</li>
             <li><strong>2 clients converted</strong> from marketing efforts — project budget ₹15L each</li>
           </ul>
         </div>
@@ -1389,13 +1449,14 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
             <div>
               <div class="exp-role">Digital Marketing Manager <span class="badge-pt">Contract</span>
 </div>
-              <div class="exp-company">MBH Creative Studio (MBH) &amp; Modular Story · Bengaluru</div>
+              <div class="exp-company">My Beautiful Home (MBH) &amp; Modular Story · Bengaluru</div>
             </div>
             <span class="exp-date">Dec 2025 – Feb 2026</span>
           </div>
           <ul class="exp-bullets">
             <li>Managed end-to-end performance marketing across <strong>Meta Ads, Reels growth, and lead funnels</strong> for multiple brands</li>
             <li>Planned creatives &amp; ad formats; managed Meta Ads (Reels, posts, stories); handled targeting &amp; optimisation</li>
+            <li>Monitored insights and performance; collaborated with design/content team on creative execution</li>
             <li>Scaled high-performing creatives achieving <strong>100K–1.3L views</strong> per creative; increased profile activity by <strong>400%+</strong></li>
             <li>Generated <strong>11 high-intent leads</strong> — minimum project budget ₹70 Lakhs+ per lead</li>
             <li>Generated <strong>5 B2B partnerships</strong> (Factory client)</li>
@@ -1410,7 +1471,7 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
           <div class="exp-header">
             <div>
               <div class="exp-role">Social Media Marketing Specialist</div>
-              <div class="exp-company">Globiva · Bengaluru</div>
+              <div class="exp-company">Globiva · Client: CRED · Bengaluru</div>
             </div>
             <span class="exp-date">Mar 2025 – Dec 2025</span>
           </div>
@@ -1483,12 +1544,34 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
   </div>
 </section>
 
+<!-- ═══════════════ NEEDLEPUSHER PROJECT ═══════════════ -->
+<section id="needlepusher">
+  <div class="max-w">
+    <div class="sec-kicker">Independent Project</div>
+    <h2 class="sec-title reveal">Needlepusher — Live E-Commerce Platform</h2>
+    <p class="sec-desc reveal">Solo-designed, built, and launched end-to-end — from initial concept through real customer transactions. <a href="https://needlepusher.in" target="_blank" rel="noopener">needlepusher.in ↗</a></p>
+    <div class="np-card reveal">
+      <a href="https://needlepusher.in" target="_blank" rel="noopener" class="np-link">🔗 View Live Site — needlepusher.in</a>
+      <ul class="exp-bullets">
+        <li>Architected and built the full storefront (<strong>Next.js, React, Tailwind CSS</strong>): product catalog, cart, checkout, wishlist, customer reviews, and size-guide tooling</li>
+        <li>Integrated <strong>Razorpay payment gateway</strong> including live merchant KYC onboarding, signature verification, and secure transaction handling</li>
+        <li>Designed a <strong>Supabase (PostgreSQL)</strong> database architecture to manage orders, live inventory, and customer reviews</li>
+        <li>Built a custom, password-protected admin dashboard enabling the non-technical business owner to independently manage orders, stock levels, product listings, and review moderation</li>
+        <li>Configured end-to-end deployment infrastructure: <strong>GitHub</strong> version control, <strong>Netlify CI/CD</strong>, custom domain and DNS configuration, and transactional email delivery</li>
+        <li>Diagnosed and resolved live production issues (silent data-logging failures, image delivery errors) through systematic root-cause debugging</li>
+        <li>Directed AI-assisted engineering tools (Claude, Antigravity) to accelerate development while personally owning architecture decisions, security practices, and quality assurance</li>
+        <li>Delivered a fully live, revenue-generating store, compressing a typically multi-week freelance/agency build timeline into days</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════ SKILLS ═══════════════ -->
 <section id="skills">
   <div class="max-w">
     <div class="sec-kicker">Core Competencies</div>
     <h2 class="sec-title reveal">Skills &amp; Expertise</h2>
-    <p class="sec-desc reveal">Full-funnel growth capabilities spanning paid media, analytics, automation, and creative execution.</p>
+    <p class="sec-desc reveal">Full-funnel growth capabilities spanning paid media, analytics, automation, creative execution, and web systems.</p>
     <div class="skills-layout">
       <!-- Tag grid -->
       <div class="skills-grid">
@@ -1498,6 +1581,10 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
         <div class="skill-card reveal" style="transition-delay:.16s"><span class="skill-icon">🎨</span><h3>Branding &amp; Design</h3><div class="skill-tags"><span class="stag">Logo Design</span><span class="stag">Brand Identity</span><span class="stag">Figma</span><span class="stag">Canva</span><span class="stag">Brand Storytelling</span></div></div>
         <div class="skill-card reveal" style="transition-delay:.20s"><span class="skill-icon">📊</span><h3>Analytics &amp; Performance</h3><div class="skill-tags"><span class="stag">ROAS / CPA / CAC</span><span class="stag">A/B Testing</span><span class="stag">Funnel Optimisation</span><span class="stag">KPI Tracking</span><span class="stag">Excel &amp; Sheets</span></div></div>
         <div class="skill-card reveal" style="transition-delay:.24s"><span class="skill-icon">🛠️</span><h3>AI &amp; Creative Tools</h3><div class="skill-tags"><span class="stag">HeyGen</span><span class="stag">VEED.io</span><span class="stag">CapCut</span><span class="stag">ChatGPT</span><span class="stag">Gemini</span><span class="stag">Perplexity</span><span class="stag">Google AI Studio</span></div></div>
+        <div class="skill-card reveal" style="transition-delay:.28s"><span class="skill-icon">💻</span><h3>Web Development &amp; E-commerce</h3><div class="skill-tags"><span class="stag">Next.js</span><span class="stag">React</span><span class="stag">Tailwind CSS</span></div></div>
+        <div class="skill-card reveal" style="transition-delay:.32s"><span class="skill-icon">💳</span><h3>Payments &amp; Backend Systems</h3><div class="skill-tags"><span class="stag">Razorpay</span><span class="stag">Supabase</span><span class="stag">PostgreSQL</span><span class="stag">Admin Dashboards</span><span class="stag">Credential Management</span></div></div>
+        <div class="skill-card reveal" style="transition-delay:.36s"><span class="skill-icon">🚀</span><h3>Deployment &amp; Infrastructure</h3><div class="skill-tags"><span class="stag">GitHub</span><span class="stag">Netlify CI/CD</span><span class="stag">DNS / Domain Config</span><span class="stag">Env Variables</span></div></div>
+        <div class="skill-card reveal" style="transition-delay:.40s"><span class="skill-icon">🌐</span><h3>Web &amp; CMS</h3><div class="skill-tags"><span class="stag">WordPress</span><span class="stag">Wix</span><span class="stag">Landing Page CRO</span></div></div>
       </div>
       <!-- Bar chart panel -->
       <div class="skill-chart-panel reveal from-right">
@@ -1508,6 +1595,7 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
         <div class="sbar-row"><div class="sbar-meta"><span class="sbar-name">B2B Lead Generation</span><span class="sbar-val">88%</span></div><div class="sbar-track"><div class="sbar-fill" data-width=".88"></div></div></div>
         <div class="sbar-row"><div class="sbar-meta"><span class="sbar-name">Analytics &amp; KPI Tracking</span><span class="sbar-val">85%</span></div><div class="sbar-track"><div class="sbar-fill" data-width=".85"></div></div></div>
         <div class="sbar-row"><div class="sbar-meta"><span class="sbar-name">A/B Testing &amp; CRO</span><span class="sbar-val">82%</span></div><div class="sbar-track"><div class="sbar-fill" data-width=".82"></div></div></div>
+        <div class="sbar-row"><div class="sbar-meta"><span class="sbar-name">Web Dev (Next.js / React)</span><span class="sbar-val">80%</span></div><div class="sbar-track"><div class="sbar-fill" data-width=".80"></div></div></div>
         <div class="sbar-row"><div class="sbar-meta"><span class="sbar-name">Python Automation</span><span class="sbar-val">78%</span></div><div class="sbar-track"><div class="sbar-fill" data-width=".78"></div></div></div>
         <div class="sbar-row"><div class="sbar-meta"><span class="sbar-name">SQL &amp; Data Processing</span><span class="sbar-val">75%</span></div><div class="sbar-track"><div class="sbar-fill" data-width=".75"></div></div></div>
       </div>
@@ -1528,8 +1616,22 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
       <div class="cert-card reveal" style="transition-delay:.16s"><div class="cert-badge">🔍</div><div class="cert-info"><h4>SEO Specialization</h4><p>HubSpot · 2025</p></div></div>
       <div class="cert-card reveal" style="transition-delay:.20s"><div class="cert-badge">📧</div><div class="cert-info"><h4>Email Marketing</h4><p>HubSpot · 2025</p></div></div>
       <div class="cert-card reveal" style="transition-delay:.24s"><div class="cert-badge">📊</div><div class="cert-info"><h4>Marketing Analytics</h4><p>Great Learning · 2024</p></div></div>
-      <div class="cert-card reveal" style="transition-delay:.24s"><div class="cert-badge">🌐</div><div class="cert-info"><h4>WordPress Certified</h4><p>Mar 2026</p></div></div>
       <div class="cert-card reveal" style="transition-delay:.28s"><div class="cert-badge">🤖</div><div class="cert-info"><h4>Generative AI Foundations</h4><p>UpGrad × Microsoft · In Progress</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ EDUCATION ═══════════════ -->
+<section id="education">
+  <div class="max-w">
+    <div class="sec-kicker">Education</div>
+    <h2 class="sec-title reveal">Academic Background</h2>
+    <div class="edu-card reveal">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-info">
+        <h4>B.E. Electrical &amp; Electronics Engineering</h4>
+        <p>RNS Institute of Technology, Bengaluru · 2017 – 2021 · GPA: 8.0 / 10.0</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1547,6 +1649,7 @@ footer p{font-size:12.5px;color:rgba(255,255,255,.35);}
         <a href="mailto:adarsha.s.careers@gmail.com" class="clink"><div class="clink-icon">✉️</div><div class="clink-text"><strong>Email</strong><span>adarsha.s.careers@gmail.com</span></div></a>
         <a href="https://wa.me/919113243402?text=Hi%20Adarsha%2C%20I%20saw%20your%20portfolio!" target="_blank" rel="noopener" class="clink"><div class="clink-icon">💬</div><div class="clink-text"><strong>WhatsApp</strong><span>+91 9113243402 · Tap to chat</span></div></a>
         <a href="https://linkedin.com/in/adarsha-sriram-6b9936188" target="_blank" rel="noopener" class="clink"><div class="clink-icon">💼</div><div class="clink-text"><strong>LinkedIn</strong><span>linkedin.com/in/adarsha-sriram-6b9936188</span></div></a>
+        <a href="https://needlepusher.in" target="_blank" rel="noopener" class="clink"><div class="clink-icon">🛒</div><div class="clink-text"><strong>Needlepusher</strong><span>needlepusher.in · Live e-commerce build</span></div></a>
         <div class="clink"><div class="clink-icon">📍</div><div class="clink-text"><strong>Location</strong><span>Bengaluru, India · Open to Remote</span></div></div>
       </div>
     </div>
